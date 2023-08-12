@@ -34,6 +34,6 @@
                 </ItemsPanelTemplate>
             </ListBox.ItemsPanel>                
         </ListBox>
-        <Label Background="Aqua">Hello</Label>
+        <Button Classes="Main">Hello</Button>
     </DockPanel>
 </UserControl>

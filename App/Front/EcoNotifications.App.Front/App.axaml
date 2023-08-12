@@ -12,9 +12,16 @@
 
     <Application.Styles>
         <FluentTheme />
+        <StyleInclude Source="/Assets/Styles.axaml"/>
     </Application.Styles>
     
     <Application.Resources>
-        <common:IconsConverter x:Key="IconsConverter" />
+        <ResourceDictionary>
+            <common:IconsConverter x:Key="IconsConverter" />
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="/Assets/Colors.axaml"/>
+                <ResourceInclude Source="/Assets/Fonts.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>

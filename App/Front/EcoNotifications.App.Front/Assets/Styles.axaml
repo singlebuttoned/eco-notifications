@@ -1,0 +1,30 @@
+<Styles xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <Styles.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceInclude Source="Colors.axaml"/>
+                <ResourceInclude Source="Fonts.axaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Styles.Resources>
+    
+    <Design.PreviewWith>
+        <Border Padding="20">
+            <!-- Add Controls for Previewer Here -->
+            <Button Classes="Main">Button</Button>
+        </Border>
+    </Design.PreviewWith>
+
+    <!-- main button, radius 10, 10 padding, color main, font roboto, 20 size -->
+    <Style Selector="Button.Main">
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="Padding" Value="10"/>
+        <Setter Property="Background" Value="{StaticResource Main}"/>
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}"/>
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="700"/>
+        <Setter Property="Foreground" Value="White"/>
+    </Style>
+</Styles>
