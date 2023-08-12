@@ -5,8 +5,8 @@
         xmlns:views="clr-namespace:EcoNotifications.App.Front.Views"
         xmlns:mainNavigator="clr-namespace:EcoNotifications.App.Front.Modules.MainNavigator"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-        x:Class="EcoNotifications.App.Front.Views.MainWindow"
+        x:Class="EcoNotifications.App.Front.Views.MainNavigatorWindow"
         Icon="/Assets/avalonia-logo.ico"
         Title="EcoNotifications.App.Front">
-    <mainNavigator:MainView />
+    <mainNavigator:MainNavigatorView />
 </Window>

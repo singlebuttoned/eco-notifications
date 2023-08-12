@@ -2,9 +2,9 @@ using Avalonia.Controls;
 
 namespace EcoNotifications.App.Front.Modules.MainNavigator;
 
-public partial class MainView : UserControl
+public partial class MainNavigatorView : UserControl
 {
-    public MainView()
+    public MainNavigatorView()
     {
         InitializeComponent();
     }

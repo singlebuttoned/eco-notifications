@@ -25,12 +25,15 @@
 
     <ItemGroup>
       <Folder Include="Modules\Events\" />
-      <Folder Include="Modules\Requests\" />
     </ItemGroup>
 
     <ItemGroup>
-      <Compile Update="Modules\MainNavigator\MainView.axaml.cs">
+      <Compile Update="Modules\MainNavigator\MainNavigatorView.axaml.cs">
         <DependentUpon>MainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+      <Compile Update="Modules\MainNavigator\MainNavigatorWindow.axaml.cs">
+        <DependentUpon>MainWindow.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
