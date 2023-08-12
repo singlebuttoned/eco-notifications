@@ -3,6 +3,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using EcoNotifications.App.Core.Modules.Main;
 using EcoNotifications.App.Front.Views;
+using MainView = EcoNotifications.App.Front.Modules.MainNavigator.MainView;
 
 namespace EcoNotifications.App.Front;
 

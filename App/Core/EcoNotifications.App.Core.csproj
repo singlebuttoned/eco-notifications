@@ -11,11 +11,10 @@
             <HintPath>..\..\..\..\.nuget\packages\reactiveui\18.3.1\lib\net6.0\ReactiveUI.dll</HintPath>
         </Reference>
         <Reference Include="System.Reactive">
-          <HintPath>..\..\..\..\.nuget\packages\system.reactive\5.0.0\lib\net5.0\System.Reactive.dll</HintPath>
+            <HintPath>..\..\..\..\.nuget\packages\system.reactive\5.0.0\lib\net5.0\System.Reactive.dll</HintPath>
         </Reference>
     </ItemGroup>
-
-
-
-
+    <ItemGroup>
+        <PackageReference Include="Splat" Version="14.4.1"/>
+    </ItemGroup>
 </Project>

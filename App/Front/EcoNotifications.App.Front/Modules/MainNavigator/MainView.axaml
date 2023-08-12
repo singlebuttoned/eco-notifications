@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:main="clr-namespace:EcoNotifications.App.Core.Modules.Main;assembly=EcoNotifications.App.Core"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="EcoNotifications.App.Front.Views.MainView"
+             x:Class="EcoNotifications.App.Front.Modules.MainNavigator.MainView"
              x:DataType="main:MainNavigatorViewModel">
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,

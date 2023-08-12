@@ -22,4 +22,16 @@
     <ItemGroup>
         <ProjectReference Include="..\..\Core\EcoNotifications.App.Core.csproj"/>
     </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Modules\Events\" />
+      <Folder Include="Modules\Requests\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Modules\MainNavigator\MainView.axaml.cs">
+        <DependentUpon>MainView.axaml</DependentUpon>
+        <SubType>Code</SubType>
+      </Compile>
+    </ItemGroup>
 </Project>
