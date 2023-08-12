@@ -1,24 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Mobile", "EcoNotifications.Mobile\EcoNotifications.Mobile\EcoNotifications.Mobile.csproj", "{5866BD91-D87F-4C21-B474-AEC7149FD3FE}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Mobile.Android", "EcoNotifications.Mobile\EcoNotifications.Mobile.Android\EcoNotifications.Mobile.Android.csproj", "{749154CE-42C6-4BF9-92C3-328C4B47F7A8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Mobile.Desktop", "EcoNotifications.Mobile\EcoNotifications.Mobile.Desktop\EcoNotifications.Mobile.Desktop.csproj", "{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Mobile.iOS", "EcoNotifications.Mobile\EcoNotifications.Mobile.iOS\EcoNotifications.Mobile.iOS.csproj", "{D9EC5709-B9A9-4643-8641-D5BA2C84E548}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Mobile.Browser", "EcoNotifications.Mobile\EcoNotifications.Mobile.Browser\EcoNotifications.Mobile.Browser.csproj", "{A976BD63-5620-4691-B632-10B7E9034DE4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EcoNotifications.Mobile", "EcoNotifications.Mobile", "{6978412B-1A95-43D8-B084-8005144DB7DF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.Api", "EcoNotifications.Backend\EcoNotifications.Backend.Api\EcoNotifications.Backend.Api.csproj", "{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EcoNotifications.Backend", "EcoNotifications.Backend", "{BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.Api", "EcoNotifications.Backend\EcoNotifications.Backend.Api\EcoNotifications.Backend.Api.csproj", "{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.Logic", "EcoNotifications.Backend\EcoNotifications.Backend.Logic\EcoNotifications.Backend.Logic.csproj", "{9DC9BC54-77EB-4DE4-9766-F6009BC915E7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.Application", "EcoNotifications.Backend\EcoNotifications.Backend.Application\EcoNotifications.Backend.Application.csproj", "{D00546A4-D13D-4DA2-9466-A853C0D02E52}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "App", "App", "{2DD73A8F-344F-4727-AE06-220BD3008613}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.DataAccess", "EcoNotifications.Backend\EcoNotifications.Backend.DataAccess\EcoNotifications.Backend.DataAccess.csproj", "{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{6F84CD86-3593-407A-B52D-EAE47A2544E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Front", "Front", "{0A2CE496-1669-4F60-9A4D-C81A6069202C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Front", "App\Front\EcoNotifications.App.Front\EcoNotifications.App.Front.csproj", "{D96B0098-367E-4310-A64D-3DBBA33B7102}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Front.Android", "App\Front\EcoNotifications.App.Front.Android\EcoNotifications.App.Front.Android.csproj", "{E076F904-3186-4B90-8D5F-2EDB9F8AA867}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Front.Browser", "App\Front\EcoNotifications.App.Front.Browser\EcoNotifications.App.Front.Browser.csproj", "{973149D9-DCA7-4FA0-AE57-41FD079DF902}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Front.Desktop", "App\Front\EcoNotifications.App.Front.Desktop\EcoNotifications.App.Front.Desktop.csproj", "{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Front.iOS", "App\Front\EcoNotifications.App.Front.iOS\EcoNotifications.App.Front.iOS.csproj", "{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.App.Core", "App\Core\EcoNotifications.App.Core.csproj", "{835E136C-30A0-4063-B581-861586CAE704}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,47 +30,49 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5866BD91-D87F-4C21-B474-AEC7149FD3FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5866BD91-D87F-4C21-B474-AEC7149FD3FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5866BD91-D87F-4C21-B474-AEC7149FD3FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5866BD91-D87F-4C21-B474-AEC7149FD3FE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{749154CE-42C6-4BF9-92C3-328C4B47F7A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{749154CE-42C6-4BF9-92C3-328C4B47F7A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{749154CE-42C6-4BF9-92C3-328C4B47F7A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{749154CE-42C6-4BF9-92C3-328C4B47F7A8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D9EC5709-B9A9-4643-8641-D5BA2C84E548}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D9EC5709-B9A9-4643-8641-D5BA2C84E548}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D9EC5709-B9A9-4643-8641-D5BA2C84E548}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D9EC5709-B9A9-4643-8641-D5BA2C84E548}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A976BD63-5620-4691-B632-10B7E9034DE4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A976BD63-5620-4691-B632-10B7E9034DE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A976BD63-5620-4691-B632-10B7E9034DE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A976BD63-5620-4691-B632-10B7E9034DE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D00546A4-D13D-4DA2-9466-A853C0D02E52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D00546A4-D13D-4DA2-9466-A853C0D02E52}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D00546A4-D13D-4DA2-9466-A853C0D02E52}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D00546A4-D13D-4DA2-9466-A853C0D02E52}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9DC9BC54-77EB-4DE4-9766-F6009BC915E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DC9BC54-77EB-4DE4-9766-F6009BC915E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DC9BC54-77EB-4DE4-9766-F6009BC915E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DC9BC54-77EB-4DE4-9766-F6009BC915E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D96B0098-367E-4310-A64D-3DBBA33B7102}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D96B0098-367E-4310-A64D-3DBBA33B7102}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D96B0098-367E-4310-A64D-3DBBA33B7102}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D96B0098-367E-4310-A64D-3DBBA33B7102}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E076F904-3186-4B90-8D5F-2EDB9F8AA867}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E076F904-3186-4B90-8D5F-2EDB9F8AA867}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E076F904-3186-4B90-8D5F-2EDB9F8AA867}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E076F904-3186-4B90-8D5F-2EDB9F8AA867}.Release|Any CPU.Build.0 = Release|Any CPU
+		{973149D9-DCA7-4FA0-AE57-41FD079DF902}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{973149D9-DCA7-4FA0-AE57-41FD079DF902}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{973149D9-DCA7-4FA0-AE57-41FD079DF902}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{973149D9-DCA7-4FA0-AE57-41FD079DF902}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{835E136C-30A0-4063-B581-861586CAE704}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{835E136C-30A0-4063-B581-861586CAE704}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{835E136C-30A0-4063-B581-861586CAE704}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{835E136C-30A0-4063-B581-861586CAE704}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{5866BD91-D87F-4C21-B474-AEC7149FD3FE} = {6978412B-1A95-43D8-B084-8005144DB7DF}
-		{749154CE-42C6-4BF9-92C3-328C4B47F7A8} = {6978412B-1A95-43D8-B084-8005144DB7DF}
-		{A976BD63-5620-4691-B632-10B7E9034DE4} = {6978412B-1A95-43D8-B084-8005144DB7DF}
-		{EB0BC159-CCE5-45EC-9010-1AA99B1DCF81} = {6978412B-1A95-43D8-B084-8005144DB7DF}
-		{D9EC5709-B9A9-4643-8641-D5BA2C84E548} = {6978412B-1A95-43D8-B084-8005144DB7DF}
-		{9C0215BD-7D8C-4CAE-99BB-76D7757D42E6} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
-		{D00546A4-D13D-4DA2-9466-A853C0D02E52} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
-		{FFA63A6C-3FD1-4744-ACF3-68C7C1D9B8CA} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
+		{FD20613D-94D2-4CE5-A0A5-4FB0FEEC6C37} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
+		{9DC9BC54-77EB-4DE4-9766-F6009BC915E7} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
+		{6F84CD86-3593-407A-B52D-EAE47A2544E8} = {2DD73A8F-344F-4727-AE06-220BD3008613}
+		{0A2CE496-1669-4F60-9A4D-C81A6069202C} = {2DD73A8F-344F-4727-AE06-220BD3008613}
+		{D96B0098-367E-4310-A64D-3DBBA33B7102} = {0A2CE496-1669-4F60-9A4D-C81A6069202C}
+		{E076F904-3186-4B90-8D5F-2EDB9F8AA867} = {0A2CE496-1669-4F60-9A4D-C81A6069202C}
+		{973149D9-DCA7-4FA0-AE57-41FD079DF902} = {0A2CE496-1669-4F60-9A4D-C81A6069202C}
+		{4CE6FFB1-7099-4DD3-AC2F-FEDC9B4E4CDD} = {0A2CE496-1669-4F60-9A4D-C81A6069202C}
+		{FF4CDE5F-14FA-4259-95DF-CD53F715FDCB} = {0A2CE496-1669-4F60-9A4D-C81A6069202C}
+		{835E136C-30A0-4063-B581-861586CAE704} = {6F84CD86-3593-407A-B52D-EAE47A2544E8}
 	EndGlobalSection
 EndGlobal
