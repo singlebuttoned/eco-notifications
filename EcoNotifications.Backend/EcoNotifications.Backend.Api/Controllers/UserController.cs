@@ -1,23 +1,73 @@
-using System.Collections;
+using EcoNotifications.Backend.Application.Common.DTO;
+using EcoNotifications.Backend.Application.Handlers.Users;
+using EcoNotifications.Backend.DataAccess.Services.Interfaces;
+using MediatR;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EcoNotifications.Backend.Api.Controllers;
 
 [Produces("application/json")]
 [ApiController]
-[Route("api/admin/[controller]")]
+[Route("api/[controller]")]
 public class UserController : ControllerBase
 {
-    // private readonly ;
+    private readonly IMediator _mediator;
+    private readonly ISecurityService _securityService;
+    private readonly ITokenManager _tokenManager;
 
-    public UserController()
+    public UserController(IMediator mediator, ISecurityService securityService, ITokenManager tokenManager)
     {
-
+        _mediator = mediator;
+        _securityService = securityService;
+        _tokenManager = tokenManager;
     }
 
-    [HttpGet(Name = "GetWeatherForecast")]
-    public async Task<IEnumerable> Get()
+    #region Swagger
+    
+    /// <summary>
+    ///     Позволяет добавить пользователя
+    ///     Телефон в формате 7xxx или 8xxx без "+" !!!
+    /// </summary>
+    /// <param name="userSaveRequest">Данные о пользователе</param>
+    /// <response code="200">Добавление прошло успешно</response>
+    /// <response code="400">Такой пользователь уже зарегистрирован</response>
+    
+    #endregion
+    
+    [HttpPost("add-user")]
+    public async Task<IActionResult> AddUser([FromBody]UserSaveRequest userSaveRequest, CancellationToken token)
     {
-        return Enumerable.Range(1, 5).ToArray();
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
+        try
+        {
+            await _mediator.Send(new SaveUser(userSaveRequest), token);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+
+        return Ok();
+    }
+    
+    [HttpPost("login")]
+    public async Task<IActionResult> Login([FromBody]UserLoginRequest userLoginRequest, CancellationToken token)
+    {
+        if (!ModelState.IsValid)
+            return BadRequest(ModelState);
+        
+        UserResponse userResponse; 
+        try
+        {
+            userResponse = await _mediator.Send(new LoginUser(userLoginRequest), token);
+        }
+        catch (Exception exception)
+        {
+            return BadRequest(exception.Message);
+        }
+
+        return Ok(userResponse);
     }
 }

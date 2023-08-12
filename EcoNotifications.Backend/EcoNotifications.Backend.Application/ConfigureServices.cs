@@ -1,4 +1,12 @@
 using System.Reflection;
+using System.Text;
+using Mapster;
+using MapsterMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace EcoNotifications.Backend.Application;
 
@@ -9,9 +17,6 @@ public static class ConfigureServices
         var assembly = Assembly.GetExecutingAssembly();
         
         services.AddHttpContextAccessor();
-        services.AddScoped<ISecurityService, SecurityService>();
-        services.AddSingleton<ITokenManager, JwtTokenManager>();
-        services.AddSingleton<IHashService, HashService>();
         services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -22,49 +27,14 @@ public static class ConfigureServices
             {
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidIssuer = "Artsofte",
+                    ValidateIssuer = false,
+                    // ValidIssuer = "Econotifications",
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                         configuration["JWT:SecretKey"]!))
                 };
-                // Adding verification of the jwt token for login and logout by receiving a user from jwt by Email
-                // and verifying this user to log in or log out 
-                // When logging in, ActiveSession = true
-                // When logging out, ActiveSession = false
-                opt.Events = new JwtBearerEvents
-                {
-                    OnTokenValidated = context =>
-                    {
-                        var jwtToken = context.HttpContext.Request.Headers["Authorization"]
-                            .FirstOrDefault()?
-                            .Split(" ")
-                            .Last();
-                        
-                        if (jwtToken is null) context.Fail("Token revoked");
-
-                        var userEmail = new JwtSecurityTokenHandler().ReadJwtToken(jwtToken)
-                            .Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-                        
-                        if (userEmail is null) context.Fail("Token revoked");
-                        
-                        using (var dbContext = context.HttpContext
-                                   .RequestServices.GetRequiredService<ArtsofteDbContext>())
-                        {
-                            if (dbContext.Users.AnyAsync(user => 
-                                    user.Email == userEmail
-                                    && !user.ActiveSession).Result
-                                ) 
-                                context.Fail("Token revoked");
-                        }
-                        
-                        return Task.CompletedTask;
-                    }
-                };
-                // opt.SaveToken = true;
-                // opt.RequireHttpsMetadata = true;
             });
         services.AddAuthorization();
         services.AddMediatR(conf => conf.RegisterServicesFromAssembly(assembly));
@@ -90,7 +60,7 @@ public static class ConfigureServices
                 new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ArtSofte"
+                    Title = "Econotifications"
                 });
             swagger.AddSecurityDefinition("Bearer",
                 new OpenApiSecurityScheme
