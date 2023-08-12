@@ -1,4 +1,5 @@
 using Avalonia.Controls;
+using EcoNotifications.App.Front.ViewModels;
 
 namespace EcoNotifications.App.Front.Views;
 

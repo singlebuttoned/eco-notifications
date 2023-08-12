@@ -1,4 +1,14 @@
+using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
+using System.Security.Claims;
+using System.Text;
+using Mapster;
+using MapsterMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.OpenApi.Models;
 
 namespace EcoNotifications.Backend.Application;
 
@@ -9,9 +19,9 @@ public static class ConfigureServices
         var assembly = Assembly.GetExecutingAssembly();
         
         services.AddHttpContextAccessor();
-        services.AddScoped<ISecurityService, SecurityService>();
-        services.AddSingleton<ITokenManager, JwtTokenManager>();
-        services.AddSingleton<IHashService, HashService>();
+        // services.AddScoped<ISecurityService, SecurityService>();
+        // services.AddSingleton<ITokenManager, JwtTokenManager>();
+        // services.AddSingleton<IHashService, HashService>();
         services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -50,15 +60,15 @@ public static class ConfigureServices
                         
                         if (userEmail is null) context.Fail("Token revoked");
                         
-                        using (var dbContext = context.HttpContext
-                                   .RequestServices.GetRequiredService<ArtsofteDbContext>())
-                        {
-                            if (dbContext.Users.AnyAsync(user => 
-                                    user.Email == userEmail
-                                    && !user.ActiveSession).Result
-                                ) 
-                                context.Fail("Token revoked");
-                        }
+                        // using (var dbContext = context.HttpContext
+                        //            .RequestServices.GetRequiredService<ArtsofteDbContext>())
+                        // {
+                        //     if (dbContext.Users.AnyAsync(user => 
+                        //             user.Email == userEmail
+                        //             && !user.ActiveSession).Result
+                        //         ) 
+                        //         context.Fail("Token revoked");
+                        // }
                         
                         return Task.CompletedTask;
                     }
