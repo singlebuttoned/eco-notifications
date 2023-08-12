@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AvaloniaProject">
+    <option name="projectPerEditor">
+      <map>
+        <entry key="App/Front/EcoNotifications.App.Front/EcoNotifications.App.Front/Views/MainView.axaml" value="App/Front/EcoNotifications.App.Front/EcoNotifications.App.Front.Browser/EcoNotifications.App.Front.Browser.csproj" />
+        <entry key="EcoNotifications.App/EcoNotifications.App/Views/MainView.axaml" value="EcoNotifications.App/EcoNotifications.App.Browser/EcoNotifications.App.Browser.csproj" />
+      </map>
+    </option>
+  </component>
+</project>
