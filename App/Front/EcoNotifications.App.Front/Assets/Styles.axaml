@@ -1,30 +1,76 @@
 <Styles xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
-    
+
     <Styles.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceInclude Source="Colors.axaml"/>
-                <ResourceInclude Source="Fonts.axaml"/>
+                <ResourceInclude Source="Colors.axaml" />
+                <ResourceInclude Source="Fonts.axaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Styles.Resources>
-    
+
     <Design.PreviewWith>
-        <Border Padding="20">
-            <!-- Add Controls for Previewer Here -->
-            <Button Classes="Main">Button</Button>
+        <Border Padding="20" Background="Gray">
+            <StackPanel Spacing="15">
+                <Button Classes="Main">Button</Button>
+                <TextBox Classes="Input" Text="Input" />
+                <StackPanel Orientation="Vertical" Background="White">
+                    <Label Classes="Text11">Text 11</Label>
+                    <Label Classes="Text14">Text 14</Label>
+                    <Label Classes="Text16">Text 16</Label>
+                    <Label Classes="Text22">Text 22</Label>
+                </StackPanel>
+            </StackPanel>
         </Border>
     </Design.PreviewWith>
 
-    <!-- main button, radius 10, 10 padding, color main, font roboto, 20 size -->
     <Style Selector="Button.Main">
-        <Setter Property="CornerRadius" Value="10"/>
-        <Setter Property="Padding" Value="10"/>
-        <Setter Property="Background" Value="{StaticResource Main}"/>
-        <Setter Property="FontFamily" Value="{StaticResource Roboto}"/>
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="FontWeight" Value="700"/>
-        <Setter Property="Foreground" Value="White"/>
+        <Setter Property="CornerRadius" Value="10" />
+        <Setter Property="Padding" Value="10" />
+        <Setter Property="Background" Value="{StaticResource Main}" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="700" />
+        <Setter Property="Foreground" Value="White" />
+    </Style>
+
+    <Style Selector="TextBox.Input">
+        <Setter Property="Foreground" Value="{StaticResource Inputs}" />
+        <Setter Property="Background" Value="White" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="CornerRadius" Value="5" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+    </Style>
+
+    <Style Selector="Label.Text14">
+        <Setter Property="Foreground" Value="{StaticResource Black}" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+        <Setter Property="FontSize" Value="14" />
+    </Style>
+
+    <Style Selector="Label.Text16">
+        <Setter Property="Foreground" Value="{StaticResource Black}" />
+        <Setter Property="FontWeight" Value="400" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+        <Setter Property="FontSize" Value="16" />
+    </Style>
+
+    <Style Selector="Label.Text11">
+        <Setter Property="Foreground" Value="{StaticResource Black}" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+        <Setter Property="FontSize" Value="11" />
+        <Setter Property="FontWeight" Value="500" />
+    </Style>
+
+    <Style Selector="Label.Text22">
+        <Setter Property="Foreground" Value="{StaticResource Black}" />
+        <Setter Property="FontFamily" Value="{StaticResource Roboto}" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="500" />
     </Style>
 </Styles>
