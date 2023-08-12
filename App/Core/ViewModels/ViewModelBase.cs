@@ -1,6 +1,6 @@
 ﻿using ReactiveUI;
 
-namespace EcoNotifications.App.Front.ViewModels;
+namespace EcoNotifications.App.Core.ViewModels;
 
 public class ViewModelBase : ReactiveObject
 {

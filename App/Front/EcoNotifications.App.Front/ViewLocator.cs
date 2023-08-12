@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using EcoNotifications.App.Front.ViewModels;
+using EcoNotifications.App.Core.ViewModels;
 
 namespace EcoNotifications.App.Front;
 
