@@ -7,19 +7,19 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <PackageReference Include="Mapster" Version="7.4.0-pre06" />
-        <PackageReference Include="AutoFilterer" Version="2.13.0" />
-        <PackageReference Include="MediatR" Version="12.0.1" />
-        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0" />
-        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.18" />
+        <PackageReference Include="Mapster" Version="7.4.0-pre06"/>
+        <PackageReference Include="AutoFilterer" Version="2.13.0"/>
+        <PackageReference Include="MediatR" Version="12.0.1"/>
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.10.0"/>
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.18"/>
     </ItemGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\EcoNotifications.Backend.DataAccess\EcoNotifications.Backend.DataAccess.csproj" />
+        <ProjectReference Include="..\EcoNotifications.Backend.DataAccess\EcoNotifications.Backend.DataAccess.csproj"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Reference Include="System.Core" />
+        <Reference Include="System.Core"/>
     </ItemGroup>
-    
+
 </Project>

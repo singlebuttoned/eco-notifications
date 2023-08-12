@@ -17,7 +17,7 @@ public static class ConfigureServices
     public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
         var assembly = Assembly.GetExecutingAssembly();
-        
+
         services.AddHttpContextAccessor();
         // services.AddScoped<ISecurityService, SecurityService>();
         // services.AddSingleton<ITokenManager, JwtTokenManager>();
@@ -28,7 +28,7 @@ public static class ConfigureServices
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,opt =>
+            .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
             {
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -52,14 +52,14 @@ public static class ConfigureServices
                             .FirstOrDefault()?
                             .Split(" ")
                             .Last();
-                        
+
                         if (jwtToken is null) context.Fail("Token revoked");
 
                         var userEmail = new JwtSecurityTokenHandler().ReadJwtToken(jwtToken)
                             .Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-                        
+
                         if (userEmail is null) context.Fail("Token revoked");
-                        
+
                         // using (var dbContext = context.HttpContext
                         //            .RequestServices.GetRequiredService<ArtsofteDbContext>())
                         // {
@@ -69,7 +69,7 @@ public static class ConfigureServices
                         //         ) 
                         //         context.Fail("Token revoked");
                         // }
-                        
+
                         return Task.CompletedTask;
                     }
                 };
@@ -81,7 +81,7 @@ public static class ConfigureServices
         services.AddMapster(assembly);
         services.AddSwagger();
     }
-    
+
     private static void AddMapster(this IServiceCollection services, Assembly assembly)
     {
         var typeAdapterConfig = TypeAdapterConfig.GlobalSettings;
@@ -90,7 +90,7 @@ public static class ConfigureServices
         services.AddSingleton<IMapper>(mapperConfig);
         services.AddSingleton(typeAdapterConfig);
     }
-    
+
     // Adding jwt Tokens to Swagger Requests 
     private static void AddSwagger(this IServiceCollection services)
     {

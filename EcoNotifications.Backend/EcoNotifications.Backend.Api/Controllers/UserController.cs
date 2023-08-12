@@ -12,7 +12,6 @@ public class UserController : ControllerBase
 
     public UserController()
     {
-
     }
 
     [HttpGet(Name = "GetWeatherForecast")]

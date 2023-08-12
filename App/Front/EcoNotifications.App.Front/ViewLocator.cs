@@ -1,7 +1,7 @@
 using System;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using EcoNotifications.App.Core.ViewModels;
+using EcoNotifications.App.Core.Common;
 
 namespace EcoNotifications.App.Front;
 
@@ -15,10 +15,7 @@ public class ViewLocator : IDataTemplate
         var name = data.GetType().FullName!.Replace("ViewModel", "View");
         var type = Type.GetType(name);
 
-        if (type != null)
-        {
-            return (Control)Activator.CreateInstance(type)!;
-        }
+        if (type != null) return (Control)Activator.CreateInstance(type)!;
 
         return new TextBlock { Text = name };
     }
