@@ -1,7 +1,7 @@
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using EcoNotifications.App.Core.Modules.Main;
+using EcoNotifications.App.Core.Modules.MainNavigator;
 using EcoNotifications.App.Front.Modules.MainNavigator;
 using EcoNotifications.App.Front.Views;
 
