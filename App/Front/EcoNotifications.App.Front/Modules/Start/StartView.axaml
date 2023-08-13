@@ -6,8 +6,13 @@
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="EcoNotifications.App.Front.Modules.Start.StartView"
              x:DataType="start:StartViewModel">
+
+    <UserControl.Styles>
+        <StyleInclude Source="/Assets/Styles.axaml"/>
+    </UserControl.Styles>
+
     <StackPanel>
-        <Label Content="Error" IsVisible="{Binding IsError}"/>
+        <Label Classes="Text11" Content="Error" IsVisible="{Binding IsError}" />
         <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" />
     </StackPanel>
 </UserControl>
