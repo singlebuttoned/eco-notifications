@@ -1,3 +1,4 @@
+using EcoNotifications.Backend.DataAccess.Domain.Services;
 using EcoNotifications.Backend.DataAccess.Services;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;

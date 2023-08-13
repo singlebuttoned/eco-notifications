@@ -1,5 +1,6 @@
 using EcoNotifications.Backend.Application.Common.DTO;
 using EcoNotifications.Backend.DataAccess;
+using EcoNotifications.Backend.DataAccess.Enums;
 using EcoNotifications.Backend.DataAccess.Models;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using Mapster;
@@ -35,6 +36,7 @@ public class SaveUserHandler : IRequestHandler<SaveUser, UserResponse>
         if (existedUser is not null)
             throw new Exception("Такой пользователь уже существет!");
         
+        entityUser.Roles = new HashSet<string> { Role.Client.ToString() };
         // Adding user
         var savedUser = (await _context.Users.AddAsync(entityUser, cancellationToken)).Entity;
         await _context.SaveChangesAsync(cancellationToken);

@@ -16,9 +16,18 @@ public class EcoNotificationsDbContext : DbContext
     }
 
     public DbSet<User> Users { get; set; } = default!;
+    public DbSet<Petition> Petitions { get; set; } = default!;
     
     protected override void OnModelCreating(ModelBuilder builder)
     {
+        foreach (var entityType in builder.Model.GetEntityTypes())
+        foreach (var property in entityType.GetProperties())
+        {
+            var propertyType = Nullable.GetUnderlyingType(property.ClrType) ?? property.ClrType;
+            if (propertyType.IsEnum)
+                property.SetProviderClrType(typeof(string));
+        }
+
         builder.Entity<User>().HasAlternateKey(x => x.Email);
         builder.Entity<User>().HasAlternateKey(x => x.Phone);
         

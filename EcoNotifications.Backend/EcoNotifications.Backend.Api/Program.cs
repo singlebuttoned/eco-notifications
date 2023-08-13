@@ -1,3 +1,4 @@
+using System.Text.Json.Serialization;
 using EcoNotifications.Backend.Application;
 using EcoNotifications.Backend.DataAccess;
 
@@ -11,7 +12,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddApplication(builder.Configuration);
 builder.Services.AddDataAccess(builder.Configuration);
 
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddJsonOptions(options =>
+{
+    options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+});
 
 builder.Services.AddCors();
 

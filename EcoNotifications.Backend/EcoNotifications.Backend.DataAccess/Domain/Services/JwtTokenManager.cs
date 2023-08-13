@@ -6,7 +6,7 @@ using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace EcoNotifications.Backend.DataAccess.Services;
+namespace EcoNotifications.Backend.DataAccess.Domain.Services;
 
 public class JwtTokenManager : ITokenManager
 {

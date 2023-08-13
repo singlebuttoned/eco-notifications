@@ -2,7 +2,7 @@ using System.Security.Claims;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
 
-namespace EcoNotifications.Backend.DataAccess.Services;
+namespace EcoNotifications.Backend.DataAccess.Domain.Services;
 
 public class SecurityService : ISecurityService
 {

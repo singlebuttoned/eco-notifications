@@ -2,7 +2,7 @@ using System.Security.Cryptography;
 using System.Text;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 
-namespace EcoNotifications.Backend.DataAccess.Services;
+namespace EcoNotifications.Backend.DataAccess.Domain.Services;
 
 public class HashService : IHashService
 {

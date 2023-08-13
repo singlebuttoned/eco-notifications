@@ -1,5 +1,7 @@
 using EcoNotifications.Backend.Application.Common.DTO;
+using EcoNotifications.Backend.Application.Common.DTO.Responses;
 using EcoNotifications.Backend.Application.Handlers.Users;
+using EcoNotifications.Backend.DataAccess.Models;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -34,7 +36,7 @@ public class UserController : ControllerBase
     
     #endregion
     
-    [HttpPost("add-user")]
+    [HttpPut("add-user")]
     public async Task<IActionResult> AddUser([FromBody]UserSaveRequest userSaveRequest, CancellationToken token)
     {
         if (!ModelState.IsValid)
@@ -58,16 +60,18 @@ public class UserController : ControllerBase
         if (!ModelState.IsValid)
             return BadRequest(ModelState);
         
-        UserResponse userResponse; 
+        User user; 
         try
         {
-            userResponse = await _mediator.Send(new LoginUser(userLoginRequest), token);
+            user = await _mediator.Send(new LoginUser(userLoginRequest), token);
         }
         catch (Exception exception)
         {
             return BadRequest(exception.Message);
         }
 
-        return Ok(userResponse);
+        var jwtToken = _tokenManager.GenerateToken(user);
+        
+        return Ok(new UserLoginResponse(jwtToken, ""));
     }
 }
