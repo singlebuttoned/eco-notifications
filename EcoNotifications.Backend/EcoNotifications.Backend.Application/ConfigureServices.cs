@@ -1,6 +1,4 @@
-using System.IdentityModel.Tokens.Jwt;
 using System.Reflection;
-using System.Security.Claims;
 using System.Text;
 using Mapster;
 using MapsterMapper;
@@ -17,71 +15,33 @@ public static class ConfigureServices
     public static void AddApplication(this IServiceCollection services, IConfiguration configuration)
     {
         var assembly = Assembly.GetExecutingAssembly();
-
+        
         services.AddHttpContextAccessor();
-        // services.AddScoped<ISecurityService, SecurityService>();
-        // services.AddSingleton<ITokenManager, JwtTokenManager>();
-        // services.AddSingleton<IHashService, HashService>();
         services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
                 options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
             })
-            .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme, opt =>
+            .AddJwtBearer(JwtBearerDefaults.AuthenticationScheme,opt =>
             {
                 opt.TokenValidationParameters = new TokenValidationParameters
                 {
-                    ValidateIssuer = true,
-                    ValidIssuer = "Artsofte",
+                    ValidateIssuer = false,
+                    // ValidIssuer = "Econotifications",
                     ValidateAudience = false,
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
                         configuration["JWT:SecretKey"]!))
                 };
-                // Adding verification of the jwt token for login and logout by receiving a user from jwt by Email
-                // and verifying this user to log in or log out 
-                // When logging in, ActiveSession = true
-                // When logging out, ActiveSession = false
-                opt.Events = new JwtBearerEvents
-                {
-                    OnTokenValidated = context =>
-                    {
-                        var jwtToken = context.HttpContext.Request.Headers["Authorization"]
-                            .FirstOrDefault()?
-                            .Split(" ")
-                            .Last();
-
-                        if (jwtToken is null) context.Fail("Token revoked");
-
-                        var userEmail = new JwtSecurityTokenHandler().ReadJwtToken(jwtToken)
-                            .Claims.FirstOrDefault(c => c.Type == ClaimTypes.Email)?.Value;
-
-                        if (userEmail is null) context.Fail("Token revoked");
-
-                        // using (var dbContext = context.HttpContext
-                        //            .RequestServices.GetRequiredService<ArtsofteDbContext>())
-                        // {
-                        //     if (dbContext.Users.AnyAsync(user => 
-                        //             user.Email == userEmail
-                        //             && !user.ActiveSession).Result
-                        //         ) 
-                        //         context.Fail("Token revoked");
-                        // }
-
-                        return Task.CompletedTask;
-                    }
-                };
-                // opt.SaveToken = true;
-                // opt.RequireHttpsMetadata = true;
             });
         services.AddAuthorization();
         services.AddMediatR(conf => conf.RegisterServicesFromAssembly(assembly));
         services.AddMapster(assembly);
         services.AddSwagger();
     }
-
+    
     private static void AddMapster(this IServiceCollection services, Assembly assembly)
     {
         var typeAdapterConfig = TypeAdapterConfig.GlobalSettings;
@@ -90,7 +50,7 @@ public static class ConfigureServices
         services.AddSingleton<IMapper>(mapperConfig);
         services.AddSingleton(typeAdapterConfig);
     }
-
+    
     // Adding jwt Tokens to Swagger Requests 
     private static void AddSwagger(this IServiceCollection services)
     {
@@ -100,7 +60,7 @@ public static class ConfigureServices
                 new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ArtSofte"
+                    Title = "Econotifications"
                 });
             swagger.AddSecurityDefinition("Bearer",
                 new OpenApiSecurityScheme

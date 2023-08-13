@@ -26,6 +26,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.Ap
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.DataAccess", "EcoNotifications.Backend\EcoNotifications.Backend.DataAccess\EcoNotifications.Backend.DataAccess.csproj", "{891AA811-02D6-4934-8D27-9D1DDC7D5D3A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EcoNotifications.Backend.QRCode", "EcoNotifications.Backend\EcoNotifications.Backend.QRCode\EcoNotifications.Backend.QRCode.csproj", "{D9D1EE79-34C7-42CF-A835-3BAFACC1F787}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -68,6 +70,10 @@ Global
 		{891AA811-02D6-4934-8D27-9D1DDC7D5D3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{891AA811-02D6-4934-8D27-9D1DDC7D5D3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{891AA811-02D6-4934-8D27-9D1DDC7D5D3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D1EE79-34C7-42CF-A835-3BAFACC1F787}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D1EE79-34C7-42CF-A835-3BAFACC1F787}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D1EE79-34C7-42CF-A835-3BAFACC1F787}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D1EE79-34C7-42CF-A835-3BAFACC1F787}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{6F84CD86-3593-407A-B52D-EAE47A2544E8} = {2DD73A8F-344F-4727-AE06-220BD3008613}
@@ -81,5 +87,6 @@ Global
 		{AB730B55-73F3-498D-BA27-7D234A3FDE3A} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
 		{49AA6CFD-3BDF-483E-8B98-412F9D072F0D} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
 		{891AA811-02D6-4934-8D27-9D1DDC7D5D3A} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
+		{D9D1EE79-34C7-42CF-A835-3BAFACC1F787} = {BD24958C-6F36-46BD-8BF4-DAFF3CC8DAA9}
 	EndGlobalSection
 EndGlobal
