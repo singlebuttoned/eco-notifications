@@ -29,11 +29,11 @@
 
     <ItemGroup>
       <Compile Update="Modules\MainNavigator\MainNavigatorView.axaml.cs">
-        <DependentUpon>MainView.axaml</DependentUpon>
+        <DependentUpon>MainNavigatorView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
       <Compile Update="Modules\Start\MainWindow.axaml.cs">
-        <DependentUpon>MainNavigatorWindow.axaml</DependentUpon>
+        <DependentUpon>MainWindow.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>

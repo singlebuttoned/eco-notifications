@@ -8,11 +8,27 @@
              x:DataType="start:StartViewModel">
 
     <UserControl.Styles>
-        <StyleInclude Source="/Assets/Styles.axaml"/>
+        <StyleInclude Source="/Assets/Styles.axaml" />
     </UserControl.Styles>
 
-    <StackPanel>
-        <Label Classes="Text11" Content="Error" IsVisible="{Binding IsError}" />
-        <ProgressBar IsIndeterminate="True" IsVisible="{Binding IsLoading}" />
-    </StackPanel>
+    <Grid
+        VerticalAlignment="Center"
+        HorizontalAlignment="Center"
+        ColumnDefinitions="20, 500, 20"
+        RowDefinitions="Auto">
+        
+        <StackPanel Grid.Column="1">
+            <Label
+                Classes="Text22"
+                Content="Error"
+                IsVisible="{Binding IsError}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+            <ProgressBar
+                IsIndeterminate="True"
+                IsVisible="{Binding IsLoading}"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center" />
+        </StackPanel>
+    </Grid>
 </UserControl>
