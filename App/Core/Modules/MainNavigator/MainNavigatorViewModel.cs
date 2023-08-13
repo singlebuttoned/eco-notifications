@@ -2,7 +2,6 @@
 using EcoNotifications.App.Core.Common;
 using EcoNotifications.App.Core.Modules.Events;
 using EcoNotifications.App.Core.Modules.Requests;
-using EcoNotifications.App.Core.Resources;
 using ReactiveUI;
 
 namespace EcoNotifications.App.Core.Modules.MainNavigator;

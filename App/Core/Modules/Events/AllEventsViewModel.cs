@@ -1,4 +1,3 @@
-using EcoNotifications.App.Core.Common;
 using EcoNotifications.App.Core.Modules.MainNavigator;
 using EcoNotifications.App.Core.Resources;
 

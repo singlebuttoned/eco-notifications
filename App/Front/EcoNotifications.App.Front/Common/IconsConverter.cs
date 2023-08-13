@@ -4,7 +4,6 @@ using Avalonia.Data;
 using Avalonia.Data.Converters;
 using Avalonia.Markup.Xaml.Converters;
 using Avalonia.Media;
-using Avalonia.Media.Imaging;
 using EcoNotifications.App.Core.Resources;
 
 namespace EcoNotifications.App.Front.Common;

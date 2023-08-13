@@ -26,6 +26,7 @@
         <ListBox 
             Height="50"
             DockPanel.Dock="Bottom"
+            
             ItemsSource="{Binding AvailableViewModels}"
             SelectedItem="{Binding CurrentViewModel}">
             <ListBox.ItemsPanel>

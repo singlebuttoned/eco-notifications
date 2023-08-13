@@ -15,6 +15,7 @@
         </Reference>
     </ItemGroup>
     <ItemGroup>
+        <PackageReference Include="AsyncAwaitBestPractices" Version="6.0.6" />
         <PackageReference Include="Splat" Version="14.4.1"/>
     </ItemGroup>
 </Project>

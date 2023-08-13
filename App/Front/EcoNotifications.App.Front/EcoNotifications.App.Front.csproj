@@ -32,8 +32,8 @@
         <DependentUpon>MainView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
-      <Compile Update="Modules\MainNavigator\MainNavigatorWindow.axaml.cs">
-        <DependentUpon>MainWindow.axaml</DependentUpon>
+      <Compile Update="Modules\Start\MainWindow.axaml.cs">
+        <DependentUpon>MainNavigatorWindow.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
     </ItemGroup>
