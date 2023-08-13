@@ -28,13 +28,9 @@ public partial class StartView : ReactiveUserControl<StartViewModel>
             if (ViewModel == null) 
                 throw new NoNullAllowedException();
             
-            ViewModel?.Authorize.RegisterHandler(Authorize).DisposeWith(disposables);
+            ViewModel?.Authorize.RegisterHandler(PerformAuthInteraction).DisposeWith(disposables);
             ViewModel?.GoToMain
-                .ObserveOn(RxApp.MainThreadScheduler)
-                .Subscribe(model =>
-                {
-                    GoToMain(model);
-                })
+                .Subscribe(GoToMain)
                 .DisposeWith(disposables);
             ViewModel?.GoByUrl
                 .Subscribe(_ => { })
@@ -51,7 +47,7 @@ public partial class StartView : ReactiveUserControl<StartViewModel>
         window.Content = new MainNavigatorView { ViewModel = vm };
     }
 
-    private async Task Authorize(InteractionContext<Unit, Unit> interaction)
+    private async Task PerformAuthInteraction(InteractionContext<Unit, Unit> interaction)
     {
         Console.WriteLine("Authorize");
         await Task.Delay(1000);

@@ -40,10 +40,7 @@ public class StartViewModel : BaseViewModel
         _parameter = parameter;
         _authorizationService = authorizationService;
         
-        GoToMain = ReactiveCommand.CreateFromObservable(() =>
-        {
-            return Observable.Return(new MainNavigatorViewModel());
-        });
+        GoToMain = ReactiveCommand.CreateFromTask(() => Task.FromResult(new MainNavigatorViewModel()));
         GoByUrl = ReactiveCommand.CreateFromTask(_ => Task.FromResult(Unit.Default));
         GoByQr = ReactiveCommand.CreateFromTask(_ => Task.FromResult(Unit.Default));
     }
