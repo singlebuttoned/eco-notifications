@@ -1,6 +1,7 @@
 using EcoNotifications.Backend.Application.Common.DTO.Requests;
 using EcoNotifications.Backend.Application.Common.DTO.Responses;
 using EcoNotifications.Backend.DataAccess;
+using EcoNotifications.Backend.DataAccess.Domain.Services.Interfaces;
 using EcoNotifications.Backend.DataAccess.Enums;
 using EcoNotifications.Backend.DataAccess.Services.Interfaces;
 using Mapster;
@@ -15,11 +16,13 @@ public class AddPetitionHandler : IRequestHandler<AddPetition, PetitionResponse>
 {
     private readonly EcoNotificationsDbContext _context;
     private readonly IHashService _hashService;
+    private readonly ISendEmail _sendEmail;
     
-    public AddPetitionHandler(EcoNotificationsDbContext context, IHashService hashService)
+    public AddPetitionHandler(EcoNotificationsDbContext context, IHashService hashService, ISendEmail sendEmail)
     {
         _context = context;
         _hashService = hashService;
+        _sendEmail = sendEmail;
     }
     
     public async Task<PetitionResponse> Handle(AddPetition request, CancellationToken cancellationToken)
@@ -31,6 +34,9 @@ public class AddPetitionHandler : IRequestHandler<AddPetition, PetitionResponse>
         await _context.SaveChangesAsync(cancellationToken);
         _context.Entry(entityPetition).State = EntityState.Detached;
 
+        await _sendEmail.SendEmailAsync("bizi1298@gmail.com", 
+            savedPetition.Entity.Topic.ToString(), savedPetition.Entity.Address);
+            
         return savedPetition.Adapt<PetitionResponse>();
     }
 }
